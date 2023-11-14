@@ -67,7 +67,10 @@ function App() {
     !currentBookId ? addBook() : updateBook();
     clearInputs();
   };
-
+  const cancelBook = () => {
+    clearInputs();
+    setCurrentBookId(null);
+  };
   const removeBook = (id) => {
     setBooks(books.filter((book) => book.bookId !== id));
   };
@@ -83,8 +86,7 @@ function App() {
         setIsbn={setIsbn}
         currentBookId={currentBookId}
         handleSubmit={handleSubmit}
-        // updateBook={updateBook}
-        // setCurrentBookId={setCurrentBookId}
+        cancelBook={cancelBook}
       />
 
       <Table books={books} removeBook={removeBook} editBook={editBook} />

@@ -9,7 +9,7 @@ const Form = ({
   setIsbn,
   currentBookId,
   handleSubmit,
-  updateBook,
+  cancelBook,
 }) => {
   return (
     <form onSubmit={handleSubmit}>
@@ -57,6 +57,7 @@ const Form = ({
                   padding: "0.5rem 0",
                   fontSize: "1.2rem",
                 }}
+                onClick={cancelBook}
               >
                 Cancel
               </button>
